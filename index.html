@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Desain</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background-color: #ffebd4;
+        }
+
+        /* Header Section */
+        .header {
+            position: fixed;
+            width: 100%;
+            height: auto;
+            min-height: 60px;
+            background-color: rgb(255, 129, 45);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom-left-radius: 26px;
+            border-bottom-right-radius: 26px;
+            z-index: 900;
+        }
+        .header.scrolled {
+            background-color: rgb(250, 129, 48);}
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .btn {
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: rgba(250, 64, 51, 0.9);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgb(255, 129, 45);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom-left-radius: 26px;
+                border-bottom-right-radius: 26px;
+            }
+
+            .nav.show {
+                display: flex;
+                border-radius: 20px;
+            }
+            .nav.active {
+                display: flex;}
+
+            .menu {
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .menu h1 {
+                font-size: 2rem;
+            }
+
+            .menu-containermakanan {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu-itemmakanan {
+                width: 80px;
+                height: 80px;
+                margin-left: 10px;
+            }
+
+            .menu-itemmakanan img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .menu-titlemakanan {
+                font-size: 0.6rem;
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-container {
+             flex-direction: column;
+              align-items: center;
+              }
+              .menu-containermakanan {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+             .menu-item {
+             width: 90%;
+            margin-bottom: 20px;
+              }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .popup-content {
+            width: 95%;
+            height: 90%;
+            padding: 15px;
+        }
+
+        .popupfont {
+            font-size: 1.5rem;
+        }
+
+        .menu-containermakanan {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .menu-itemmakanan {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+            margin-bottom: 60px;
+        }
+
+        .menu-itemmakanan img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .menu-titlemakanan {
+            font-size: 0.6rem;
+        }
+    
+            .heroreview {
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .heroreview h1 {
+                font-size: 2rem;
+            }
+
+            .heroreview p {
+                font-size: 1rem;
+            }
+
+            .testimonials {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonial-box {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+    .menu-containermakanan {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .popup-content {
+            padding: 10px;
+        }
+
+        .popupfont {
+            font-size: 1.2rem;
+        }
+
+        .menu-containermakanan {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .menu-itemmakanan {
+            width: 100px;
+            height: 100px;
+            margin-left: 0;
+            margin-bottom: 40px;
+        }
+
+        .menu-titlemakanan {
+            font-size: 0.7rem;
+        }
+}
+
+
+        /* Main Content */
+        .main {
+            text-align: left;
+            text-shadow: #000000;
+            padding: 40px;
+            background-image: url("dimsum mentai.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+           min-height: 720px; /* Subtract header height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            margin-bottom: 150px;
+            border-radius: 40px;
+        }
+
+        .main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: #ffffff; /* Adjust text color for better visibility */
+            text-shadow: #000000;
+            
+        }
+
+        .main p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: #000000;
+            width: 50%;
+            color: #ffffff; /* Adjust text color for better visibility */
+        }
+
+
+        
+     /* Hero Section */
+                .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 150px 20px;
+            background: url('dimsum mentai.jpg') no-repeat center center;
+            background-size: cover;
+         font-family: 'Playfair Display', serif;
+         border-radius: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 200px;
+        }
+
+        .content .text {
+            text-align: left;
+            line-height: 1.6;
+            font-size: 1rem;
+            color: #000000;
+            flex: 1;
+            font-family: 'poppins', sans-serif;
+
+        }
+
+        .content .content-logo {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content .content-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+                /* Footer Section */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer img {
+            width: 150px;
+            height: auto;
+        }
+
+                /* Container Utama */
+                .menu-container {
+            display: flex;
+            justify-content: center;
+            /* Pusatkan elemen secara horizontal */
+            align-items: stretch;
+            /* Semua item sama tinggi */
+            gap: 30px;
+            /* Beri jarak antar item */
+            flex-wrap: wrap;
+            /* Responsif agar item berpindah baris di layar kecil */
+            margin: 100px auto;
+            margin-top: 35px;
+            margin-bottom: 150px;
+            /* Pusatkan container dengan margin */
+            padding: 20px;
+            max-width: 900px;
+            /* Batasi lebar container agar lebih seimbang */
+        }
+
+        /* Setiap Item Menu */
+        .menu-item {
+            background-color: #4b452c;
+            /* Warna sama dengan background */
+            border-radius: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 250px;
+            /* Responsif: Min 250px, sama-sama membagi ruang */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Pusatkan isi vertikal */
+            justify-content: space-between;
+            /* Jarak seimbang antar elemen */
+            padding: 20px;
+            text-align: center;
+      
+        }
+
+        /* Menempatkan teks di atas gambar */
+        .menu-item .menu-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d48332;
+            font-family: 'poppins', sans-serif;
+            /* Warna teks seragam */
+            margin-bottom: 10px;
+            /* Jarak teks dengan gambar */
+        }
+
+        /* Gambar menu */
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Tombol */
+        .menu-item button {
+            background-color: #ffa61a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            width: 100%;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .menu-item button:hover {
+            background-color: #ff8f00;
+        }
+
+        .hidden-title {
+            color: #fdfde1;
+            /* Warna teks sama dengan background */
+        }
+
+
+ /*ini overlay*/
+    /* Style konten popup */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        position: relative;
+        background-image: url(lihat-bck.png);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        border-radius: 30px;
+        width: 90%;
+        max-width: 1080px;
+        height: 80%;
+        max-height: 650px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .close:hover {
+        color: red;
+    }
+
+    .popupfont {
+        color: #fdfde1;
+        font-family: 'poppins', sans-serif;
+        padding-top: 20px;}
+    /*menu*/
+    .menu  {
+            padding: 30px 20px;
+            color: #fff;
+            text-align: center;
+            background: #4b452c; 
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 720px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'playfair display', serif;
+        /* Menempatkan teks di atas gambar */}
+        .menu-containermakanan {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            /* Beri jarak antar item */
+            margin: 10px auto;
+            /* Pusatkan container dengan margin */
+            padding: 10px;
+            max-width: 800px;
+            /* Batasi lebar container agar lebih seimbang */}
+
+    .menu-itemmakanan {
+            position: relative;
+            /* Untuk menempatkan elemen anak */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2px;
+            margin-bottom: 100px;
+            margin-left: 40px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        
+        }
+
+        .thumb-icon {
+        position: absolute;
+        top: 140px;
+        right: -30px;
+        font-size: 20px;
+        z-index: 3;
+        /* Pastikan emoji muncul di atas gambar */
+        background-color: rgb(255, 191, 0);
+        /* Latar belakang semi-transparan */
+        border-radius: 45%;
+        /* Membuat latar belakang bulat */
+        padding: 1px;
+        /* Sedikit padding untuk estetika */
+        margin: 2px 2px 2px 2px;
+    }
+         
+        .menu-titlemakanan {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #ffffff;
+            /* Warna teks seragam */
+            margin-top: 5px;
+            font-family: 'poppins', sans-serif;
+        }
+    
+        /* Gambar menu */
+        .menu-itemmakanan img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            z-index: 2;
+            /* Pastikan gambar tetap di atas background */
+        }
+    
+        .hidden-title {
+            color: #fdfde1;
+            /* Warna teks sama dengan background */
+        
+        }
+
+             /* Hero Section */
+             .heroreview  {
+            padding: 30px 20px;
+            color: #fff;
+            text-align: center;
+            background: #4b452c; 
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .heroreview h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: 'playfair display', serif;
+        }
+
+        .heroreview p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+            margin-bottom: 300px;
+        }
+
+        .testimonial-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+        }
+
+        .testimonial-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .testimonial-box p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #555;
+            font-family: 'poppins', sans-serif;
+        }
+            /* Contact Section */
+            .contact-container {
+            padding: 50px 20px;
+            color: #fff;
+            text-align: center;
+            background: #4b452c; /* Tambahkan transparansi ke konten */
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'playfair display', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: rgba(255, 169, 61, 0.9); /* Transparansi */
+            border-radius: 14px;
+            width: 200px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        .card img {
+       max-width: 50px;
+            margin-bottom: 15px;
+            color: #4b452c;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .card a button {
+            background-color: #4b452c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            text-decoration: none;
+            font-family: 'POPPINS', sans-serif;
+        }
+
+        .card a button:hover {
+            background-color: #252406;
+        }
+
+        /* Footer */
+        .footercontact {
+            background-color: rgb(250, 129, 48); /* Transparan */
+            padding: 20px;
+            color: white;
+            margin-top: 5%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            text-align: left;
+            position: relative;
+            height: 150px;
+            font-family: poppins, sans-serif;
+        }
+
+        .footercontact p {
+            margin: 5px 0;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            z-index: 950;
+        }
+        
+    </style>
+</head>
+
+
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/6287780742629" target="_blank">
+        <img src="0.75x/WHATSAPPldpi.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+     <!-- Header -->
+     <header class="header">
+        <div class="logo">
+            <img src="LOGO ELZ KITCHEN CIRCLE.png" alt="Logo">
+        </div>
+        <nav class="nav" id="nav-menu">
+           
+            <a href="#section1" class="btn">Home</a>
+            <a href="#section2" class="btn">Profile</a>
+            <a href="#section3" class="btn">Daftar Menu</a>
+            <a href="#section4" class="btn">Review</a>
+            <a href="#section5" class="btn">Pesan di sini</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="main" id="section1">
+        <h1>Selamat Datang!</h1>
+        <p>Mari menjelajahi berbagai macam menu makanan dengan El’z Kitchen</p>
+    </section>
+
+
+<!-- profile -->
+
+<!-- Hero Section -->
+<section class="hero" id="section2">
+    <h1>Kitchen Profile</h1>
+</section>
+
+<!-- Content Section -->
+<section class="content">
+    <div class="text">
+        <p>EL’Z Kitchen adalah sebuah UMKM yang awalnya dimulai dari hobi memasak sang owner. UMKM ini juga terbentuk, dengan menjual berbagai makanan dengan berbagai kategori seperti makanan tradisional, makanan ringan, lauk, sambak, kue dan minuman. Owner akan membuat makanan tersebut by order atau pre-order. </p>
+    </div>
+    <div class="content-logo">
+        <img src="LOGO ELZ KITCHEN CIRCLE.png" alt="Logo">
+    </div>
+</section>
+
+<section class="menu" id="section3">
+    <h1>Menu</h1>
+</section>
+    <section class="menu-container">
+        <!-- Item 1: Makanan -->
+        <div class="menu-item">
+            <div class="menu-title"><span class="highlight">Makanan</span></div>
+            <img src="makanan.png" alt="Makanan">
+            <!-- Button yang dapat di-klik -->
+            <button onclick="openPopup('popup1')">Lihat</button>
+        </div>
+        
+        <!-- Item 2: Minuman -->
+        <div class="menu-item">
+            <div class="menu-title">Minuman</div>
+            <img src="minuman.png" alt="Minuman">
+            <button onclick="openPopup('popup2')">Lihat</button>
+        </div>
+
+
+        <!-- Item 3: Snack -->
+        <div class="menu-item">
+            <div class="menu-title">Snack</div>
+            <img src="snack.png" alt="Snack">
+            <button onclick="openPopup('popup3')">Lihat</button>
+        </div>
+    </section>
+    <!-- Popup 1 -->
+     <div id="popup1" class="popup">
+     <div class="popup-content">
+      <span class="close" onclick="closePopup('popup1')">&times;</span>
+      <h1 class="popupfont">Menu Makanan</h1>
+    <div class="menu-containermakanan">
+        <!-- Item 1: Rendang Uni Elz -->
+        <div class="menu-itemmakanan">
+            <div class="thumb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                </svg>
+            </div>
+            <img src="rendang.jpg" alt="Rendang Uni Elz">
+            <div class="menu-titlemakanan">Rendang Uni Elz</div>
+        </div>
+    
+        <!-- Item 2: Kering Kentang Mustafa -->
+        <div class="menu-itemmakanan">
+            <img src="mustofa.jpg" alt="Kering Kentang Mustafa">
+            <div class="menu-titlemakanan">Kering Kentang Mustafa</div>
+        </div>
+    
+        <!-- Item 3: Kering Kentang Balado -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Kering Kentang Balado">
+            <div class="menu-titlemakanan">Kering Kentang Balado</div>
+        </div>
+    
+        <!-- Item 4: Sambal Teri Mercon -->
+        <div class="menu-itemmakanan">
+            <div class="thumb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                </svg>
+            </div>
+            <img src="sambal_teri_mercon.png" alt="Sambal Teri Mercon">
+            <div class="menu-titlemakanan">Sambal Teri Mercon</div>
+        </div>
+    
+        <!-- Item 5: Sambal Cumi Mercon -->
+        <div class="menu-itemmakanan">
+            <div class="thumb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                </svg>
+            </div>
+            <img src="sambal_cumi_mercon.png" alt="Sambal Cumi Mercon">
+            <div class="menu-titlemakanan">Sambal Cumi Mercon</div>
+        </div>
+    
+        <!-- Item 6: Sambal Cakalang Mercon -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Sambal Cakalang Mercon">
+            <div class="menu-titlemakanan">Sambal Cakalang Mercon</div>
+        </div>
+    
+        <!-- Item 7: Ketupat Sayur Padang -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Ketupat Sayur Padang">
+            <div class="menu-titlemakanan">Ketupat Sayur Padang</div>
+        </div>
+    
+        <!-- Item 8: Soto Padang Uni Elz -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Soto Padang Uni Elz">
+            <div class="menu-titlemakanan">Soto Padang Uni Elz</div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Popup 2 -->
+     <div id="popup2" class="popup">
+     <div class="popup-content">
+      <span class="close" onclick="closePopup('popup2')">&times;</span>
+      <h1 class="popupfont">Menu Minuman</h1>
+      <div class="menu-containermakanan">
+        <!-- Item 1: capcin -->
+        <div class="menu-itemmakanan">
+            <img src="capcin.jpg" alt="cappucino cincau">
+            <div class="menu-titlemakanan">cappucino cincau</div>
+        </div>
+    
+        <!-- Item 2: cokelat -->
+        <div class="menu-itemmakanan">
+            <img src="coklat.jpg" alt="cokelat">
+            <div class="menu-titlemakanan">cokelat</div>
+        </div>
+    
+        <!-- Item 3: thai tea -->
+        <div class="menu-itemmakanan">
+            <img src="thaitea.jpg" alt="thaitea">
+            <div class="menu-titlemakanan">thaitea</div>
+        </div>
+    
+        <!-- Item 4: greentea -->
+        <div class="menu-itemmakanan">
+            <img src="green tea.jpg" alt="greentea">
+            <div class="menu-titlemakanan">greentea</div>
+        </div>
+    
+        <!-- Item 5: cendol -->
+        <div class="cendol">
+            <img src="cendol.png" alt="cendol">
+            <div class="menu-titlemakanan">cendol</div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- Popup 3 -->
+     <div id="popup3" class="popup">
+      <div class="popup-content">
+      <span class="close" onclick="closePopup('popup3')">&times;</span>
+      <h1 class="popupfont">Menu Snack</h1>
+      <div class="menu-containermakanan">
+        <!-- Item 1: risol -->
+        <div class="menu-itemmakanan">
+            <img src="zuppa soup.jpg" alt="zuppasoup">
+            <div class="menu-titlemakanan">Zuppa Soup</div>
+        </div>
+    
+        <!-- Item 2: Sumsum -->
+        <div class="menu-itemmakanan">
+            <img src="bubur sumsum.jpg" alt="Bubur Sumsum">
+            <div class="menu-titlemakanan">Bubur Sumsum</div>
+        </div>
+    
+        <!-- Item 3: Makaroni Schotel -->
+        <div class="menu-itemmakanan">
+            <img src="makaroni schotel 1.png" alt="Makaroni Schotel">
+            <div class="menu-titlemakanan">Makaroni Schotel</div>
+        </div>
+    
+        <!-- Item 4: Lemper -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Lemper">
+            <div class="menu-titlemakanan">Lemper</div>
+        </div>
+    
+        <!-- Item 5: Dimsum -->
+        <div class="menu-itemmakanan">
+            <img src="dimsum 1.png" alt="Dimsum">
+            <div class="menu-titlemakanan">Dimsum</div>
+        </div>
+    
+        <!-- Item 6: Bubur Kacang Ijo -->
+        <div class="menu-itemmakanan">
+            <img src="bubur kacang.jpg" alt="Bubur Kacang Ijo">
+            <div class="menu-titlemakanan">Bubur Ketan Hitam</div>
+        </div>
+    
+        <!-- Item 7: Nastar -->
+        <div class="menu-itemmakanan">
+            <img src="no food.png" alt="Nastar">
+            <div class="menu-titlemakanan">Nastar</div>
+        </div>
+    
+        <!-- Item 8: Kastengel -->
+        <div class="menu-itemmakanan">
+            <img src="kastengel.jpg" alt="Kastengel">
+            <div class="menu-titlemakanan">Kastengel</div>
+        </div>
+    </div>
+      </div>
+     </div>
+
+    
+ <!-- review -->
+    <section class="heroreview" id="section4">
+        <h1>Testimoni</h1>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" >
+        <div class="testimonial-box">
+            <h3>Ibu Siti</h3>
+            <p>Enak banget bu, cocok banget buat dimakan pas lagi nonton santai di rumah xixixi</p>
+        </div>
+        <div class="testimonial-box">
+            <h3>Ibu Ida</h3>
+            <p>Manteep nih kentang mustofa nya El'z Kitchen...garing pedesnya pas bumbunya juga maknyus, tinggal segini dicemilin</p>
+        </div>
+        <div class="testimonial-box">
+            <h3>Ibu Anna</h3>
+            <p>Bu El terima kasih banyak pesanannya sdh diterima dan sdh dimakan. Betul bu, lumpur surganya enak banget dimakan dingin² tambah mantul</p>
+        </div>
+    </section>
+        <!-- Contact Section -->
+        <section class="contact-container" id="section5">
+            <h1>Contact us</h1>
+            <div class="contact-cards">
+                <!-- Instagram Card -->
+                <div class="card">
+                    <img src="0.75x/INSTAGRAMldpi.png" alt="Instagram">
+                    <h2>Instagram</h2>
+                    <a href="https://www.instagram.com/eel_eliza/" target="_blank">
+                        <button>Follow Me</button>
+                    </a>
+                </div>
+    
+                <!-- WhatsApp Card -->
+                <div class="card">
+                    <img src="0.75x/WHATSAPPldpi.png" alt="WhatsApp">
+                    <h2>WhatsApp</h2>
+                    <a href="https://wa.me/6287780742629" target="_blank">
+                        <button>Pesan Disini</button>
+                    </a>
+                </div>
+    
+
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="footercontact">
+            <p>Location: cimanggis, Depok</p>
+            <p>+6287780742629</p>
+            <p>@eel_eliza</p>
+           
+        </footer>
+
+    <script>
+    // Fungsi untuk membuka popup
+    function openPopup(popupId) {
+      document.getElementById(popupId).style.display = 'flex';
+    }
+
+    // Fungsi untuk menutup popup
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+    }
+
+   // JavaScript for responsive menu
+   document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const header = document.querySelector('.header');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Change header background on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking a link
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+        function openPopup(popupId) {
+        var popup = document.getElementById(popupId);
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+    }
+
+    function closePopup(popupId) {
+        var popup = document.getElementById(popupId);
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close popup when clicking outside the content
+    window.onclick = function(event) {
+        if (event.target.classList.contains('popup')) {
+            event.target.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+  </script>
+
+</body>
+
+</html>
